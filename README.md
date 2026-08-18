@@ -84,8 +84,7 @@ The [`tests/`](tests) folder contains validation scripts run after each layer lo
  
 ## Naming Conventions
  
-All objects follow a consistent convention — see [`docs/naming_conventions.md`](docs/naming_conventions.md) for the full spec. In short:
- 
+All objects follow a consistent convention — see [`docs/naming_conventions.md`](docs/naming_conventions.md) for the full spec.
 - `snake_case` throughout, English names, no reserved words.
 - Bronze/Silver tables: `<sourcesystem>_<entity>` (e.g., `crm_cust_info`).
 - Gold views: `<category>_<entity>` (e.g., `dim_customers`, `fact_sales`).
