@@ -1,4 +1,4 @@
-# SQL Data Warehouse Project
+# Medallion Data Warehouse — SQL Server
  
 Building a modern data warehouse with **SQL Server**, implementing a **Medallion Architecture** (Bronze, Silver, Gold layers) to consolidate sales data from two source systems — **CRM** and **ERP** — into a clean, analytics-ready **star schema**.
  
