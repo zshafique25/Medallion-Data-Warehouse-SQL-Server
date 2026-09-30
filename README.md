@@ -45,11 +45,11 @@ The pipeline moves data through three stages using stored procedures:
  
 **Data lineage** (source → warehouse):
  
-<img width="1094" height="554" alt="data_flow" src="https://github.com/user-attachments/assets/9168c8bc-5d8a-4022-be68-041c6df8a8e7" />
+<img width="1094" height="554" alt="data_flow" src="https://github.com/zshafique25/Medallion-Data-Warehouse-SQL-Server/blob/master/docs/2_data_lineage.png" />
  
 **CRM ↔ ERP integration logic:**
  
-<img width="1522" height="761" alt="data_integration" src="https://github.com/user-attachments/assets/075323e2-ad08-48e2-97ba-b849395edb21" />
+<img width="1522" height="761" alt="data_integration" src="https://github.com/zshafique25/Medallion-Data-Warehouse-SQL-Server/blob/master/docs/3_data_integration.png" />
 
 ---
  
@@ -57,7 +57,7 @@ The pipeline moves data through three stages using stored procedures:
  
 The Gold layer exposes a **star schema** with two dimensions and one fact view:
 
-<img width="1500" height="549" alt="data_model" src="https://github.com/user-attachments/assets/236357be-5ba9-4431-bb45-a51e62fc7fd0" />
+<img width="1500" height="549" alt="data_model" src="https://github.com/zshafique25/Medallion-Data-Warehouse-SQL-Server/blob/master/docs/4_data_model.png" />
  
 - **`gold.dim_customers`** — Customer demographics, enriched with gender/country from ERP where CRM data is missing.
 - **`gold.dim_products`** — Current product catalog (historical/discontinued products filtered out), enriched with category and subcategory from ERP.
