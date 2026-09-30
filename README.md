@@ -10,7 +10,7 @@ This project covers the full pipeline: data ingestion, cleansing, transformation
  
 The warehouse follows the Medallion Architecture with three layers:
  
-<img width="1544" height="795" alt="data_architecture" src="https://github.com/user-attachments/assets/cf8ce6b9-8b6f-4250-a935-70d5afedd07f" />
+<img width="1544" height="795" alt="data_architecture" src="https://github.com/zshafique25/Medallion-Data-Warehouse-SQL-Server/blob/master/docs/1_data_architecture.png" />
  
 - **🥉 Bronze Layer** — Raw, unprocessed data ingested as-is from source CSV files (CRM & ERP) into SQL Server via `BULK INSERT`. No transformations are applied; this layer serves as the single source of truth for raw data.
 - **🥈 Silver Layer** — Cleaned and standardized data. Includes deduplication, trimming whitespace, normalizing codes into readable values (e.g., `M` → `Married`), handling invalid dates/prices, and enriching records — preparing the data for modeling.
