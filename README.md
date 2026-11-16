@@ -1,4 +1,4 @@
-# Medallion Data Warehouse — SQL Server
+# Medallion Data Warehouse on SQL Server
  
 Building a modern data warehouse with **SQL Server**, implementing a **Medallion Architecture** (Bronze, Silver, Gold layers) to consolidate sales data from two source systems — **CRM** and **ERP** — into a clean, analytics-ready **star schema**.
  
@@ -26,10 +26,10 @@ This project demonstrates a complete, end-to-end data warehousing workflow:
 3. **Data Modeling** — Building fact and dimension tables optimized for analytical queries.
 4. **Data Quality** — Validating consistency, integrity, and standardization at each layer.
 **Source Systems:**
-| System | Entities |
-|---|---|
-| CRM | Customer info, product info, sales details |
-| ERP | Customer demographics, location, product category |
+| System | Entities                                          |
+| ------ | ------------------------------------------------- |
+| CRM    | Customer info, product info, sales details        |
+| ERP    | Customer demographics, location, product category |
  
 ---
  
@@ -37,11 +37,11 @@ This project demonstrates a complete, end-to-end data warehousing workflow:
  
 The pipeline moves data through three stages using stored procedures:
  
-| Step | Procedure | What it does |
-|---|---|---|
-| 1 | `bronze.load_bronze` | Truncates Bronze tables, then bulk-inserts raw data from the source CSV files. |
-| 2 | `silver.load_silver` | Truncates Silver tables, then transforms and inserts cleansed data from Bronze — deduplicating customers, splitting product keys into category/product IDs, normalizing status/gender/country codes, fixing invalid dates, and recalculating sales figures where the source data is inconsistent. |
-| 3 | Gold views | Query the Silver layer directly and join CRM + ERP data into ready-to-use dimension and fact views — no physical load step required. |
+| Step | Procedure            | What it does                                                                                                                                                                                                                                                                                      |
+| ---- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | `bronze.load_bronze` | Truncates Bronze tables, then bulk-inserts raw data from the source CSV files.                                                                                                                                                                                                                    |
+| 2    | `silver.load_silver` | Truncates Silver tables, then transforms and inserts cleansed data from Bronze — deduplicating customers, splitting product keys into category/product IDs, normalizing status/gender/country codes, fixing invalid dates, and recalculating sales figures where the source data is inconsistent. |
+| 3    | Gold views           | Query the Silver layer directly and join CRM + ERP data into ready-to-use dimension and fact views — no physical load step required.                                                                                                                                                              |
  
 **Data lineage** (source → warehouse):
  
